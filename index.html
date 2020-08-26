@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">
+	<title>Flexbox Layout</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+	@font-face{
+		font-family:stylish;
+		src:url("Fonts/bakery.ttf"); 
+	}
+	body{
+		font-family:stylish;
+		display: flex;
+		flex-direction:column;
+		margin: 0;
+	}
+	header{
+		background-color:teal;
+		display: flex;
+		align-items: center;
+		padding:10px 0px;
+		flex-shrink: 0;
+	}
+	header ul{
+		list-style: none;
+		display: flex;
+		padding:0px;
+		margin:0px;
+	}
+	a{
+		text-decoration: none;
+		color:orange;
+	}
+	#logo{
+		margin: 0 auto;	
+		font-weight:bold;
+		font-size:5vmin;
+	}
+	#menu li{
+		padding:10px;
+		font-weight:bold;
+		font-size:20px;
+
+	}
+
+	#social-links li{
+		padding:10px;
+	}
+	header li{
+		color:orange;
+	}
+	#main li{
+		list-style: none;
+	} 
+	article {
+		font-family:serif;
+	}
+	.services-container{
+		display: flex;
+		justify-content: space-between;
+	}
+	.service-box{
+		padding:10px;
+		flex-basis:32%;
+		display: flex;
+		flex-direction: column;
+}
+	.service-box img{
+		width: 100%;
+	}
+	.call-to-action {
+		display: flex;
+		width:100px;
+		height:30px;
+		background-color: teal;
+		transition: background-color 0.5s,border 0.5s;
+		border:2px solid orange;
+		align-self: flex-start;
+		margin-top: auto;
+	}
+	.call-to-action a{
+		margin:auto;
+		color:orange;
+	}
+	.call-to-action:hover a{
+		color:teal;
+	}
+	.call-to-action:hover{
+		background-color: orange;
+		border:2px solid teal;
+	}
+	#main {
+		display: flex;
+	}
+	aside{
+		font-size:5vmin;
+		flex:0 0 20vw;
+		background-color:lightgreen;
+		padding-right:10px;
+	} 
+	#main ul{
+		padding-left:4vmin;
+	}
+	#main ul li{
+		margin-top:20px;
+		width:29vmin;
+	}
+	#main ul a{
+		display: block;
+		text-align: center;
+		box-shadow:inset 7px 7px 7px rgba(94,104,121,.288),inset -8px -8px 7px #ffffff73;
+		border-radius: 10px;
+	}
+	.img1{
+		height: 25.4vh;
+		background-size: contain;
+		background-image:url("jewelry.jpg");
+		background-repeat: no-repeat;
+	}
+	.img2{
+		height: 25.4vh;
+		background-size: contain;
+		background-image:url("luxurywatch.jpg");	
+		background-repeat: no-repeat;
+	}
+	article{
+		padding: 10px;
+	}
+	article p{
+		line-height: 40px;
+		word-spacing:5px;
+		letter-spacing:1px;
+	}
+	footer{
+		background-color:teal;
+		height:7vh;
+		width:100%;
+		color:orange;
+		text-align: center;
+		font-size:5vmin;
+	}
+	@media screen and (max-width:980px){      /*This is called media query*/
+		.services-container{
+			flex-wrap: wrap;
+		}
+		.service-box{
+			flex-basis:50%;
+		}
+		.services-container .service-box:last-child{
+			margin:0 auto;
+		}
+	}
+	@media screen and (max-width:580px){
+		header{
+			flex-direction: column;
+		}
+		.services-container{
+			flex-direction:column; 
+		}
+		.services-box{
+			flex-basis: 50%;
+			max-width: 370px;
+			align-items: center;
+		}
+
+		#main{
+			flex-direction: column;
+		}
+		article{
+			order: -1;
+		}
+		#main ul{
+			padding: 0;
+			height: 160vh;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			align-items: center;
+		}
+		#main ul li{
+			height: 4.5%;
+			width: 80%;
+
+		}
+		#main ul li:nth-child(9){
+		background-size: cover;
+		height:20%;
+		width: 70%;
+		align-self: center;
+	}	
+		#main ul li:nth-child(10){
+		background-size: cover;
+		height:20%;
+		width: 70%;
+		align-self: center;
+	}
+		#main ul a{
+			border-bottom:1px solid grey;
+			border-radius: 0px;
+			box-shadow: none;
+			width: 80vw;
+		}
+		aside{
+			width: 100%;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<nav id="menu">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</nav>
+	<div id="logo">
+	<a href="#">ProShop</a>
+	</div>
+	<nav id="social-links">
+	<ul>
+		<li><a href="#"><i class="fa fa-facebook-f" style="font-size:30px;color:orange"></i></a></li>
+		<li><a href="#"><i class="fa fa-instagram" style="font-size:30px;color:orange"></i></a></li>
+		<li><a href="#"><i class="fa fa-google-plus" style="font-size:30px;color:orange"></i></a></li>
+	</ul>
+	</nav>
+</header>
+
+<div id="main">
+
+<aside>
+	<ul>
+		<li><a href="#">Electronics</a></li>
+		<li><a href="#">TV & Appliances</a></li>
+		<li><a href="#">Men</a></li>
+		<li><a href="#">Women</a></li>
+		<li><a href="#">Baby & Kids</a></li>
+		<li><a href="#">Home & Furnitures</a></li>
+		<li><a href="#">Sports & Books</a></li>
+		<li><a href="#">Groceries</a></li>
+		<li class="img1"></li>
+		<li class="img2"></li>
+	</ul>
+</aside>
+<article>
+<h2>WELCOME TO PROSHOP</h2>
+<p>
+ProShop is an online shopping app.
+ProShop was founded by Siddhant Singh & Kalash Agrahari on <b>10 NOV 1989 in LosAngeles,California.</b> 
+ProShop is one of the most successful & popular shopping site among the shopping lovers.
+ProShop is getting amazing response as well as feedback from our customers
+ProShop Revenue:<b>US$300.82 BILLION(2018).</b><br>
+ProShop Net Income:<b>US$15.72BILLION(2018).</b>
+Co-Founder:Siddhant Singh & Kalash Agrahari.
+Shares:Kalash Agrahari(100%).
+Number of Employees:<b>80,23,210.</b><br>
+Click to visit our website:<a href="#"><button class="magnify" size="100" style="height:25px; width:200px;font-size:16px">www.Proshop.com</button></a>
+CUSTOMER CARE:5263526561.
+
+</p>
+<h2>Our Services</h2>
+<div class="services-container">
+<div class="service-box">
+<div class="service-img">
+	<img src="homedelv.jpg">
+</div>
+<div><h3>Fast Delivery</h3></div>
+<div>
+	<p>We give fastest and safe delivery so that our customer get the ultimate of the best.</p>
+</div>
+<div class="call-to-action">
+	<a href="#">Read more</a>
+</div>
+</div>
+
+<div class="service-box">
+<div class="service-img">
+	<img src="cod.jpg">
+</div>
+<div><h3>Safe and Secure Payment</h3></div>
+<div>
+	<p>We work to provide more safe and secure payment so that you can freely do any transaction with us.</p>
+</div>
+<div class="call-to-action">
+	<a href="#">Read more</a>
+</div>
+</div>
+
+
+<div class="service-box">
+<div class="service-img">
+	<img src="quality.jpg">
+</div>
+<div><h3>Best Quality Products</h3></div>
+<div>
+	<p>Providing the best quality and high discount products is our first priority.So that we could make this family more strong.</p>
+</div>
+<div class="call-to-action">
+	<a href="#">Read more</a>
+</div>
+</div>
+
+</div>
+
+</div>
+</article>
+</div>
+<footer>
+Made By Codeforever
+</footer>
+</body>
+</html>
